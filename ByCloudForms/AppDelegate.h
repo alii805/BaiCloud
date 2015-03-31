@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "LocationManager.h"
+
 @class ViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
@@ -15,5 +17,9 @@
 @property (strong, nonatomic) UIWindow *window;
 
 @property (strong, nonatomic) ViewController *viewController;
+
+@property (nonatomic,strong) NSString *databaseName;
+
+@property (nonatomic,strong) NSString *databasePath;
 
 @end

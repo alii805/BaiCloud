@@ -11,19 +11,61 @@
 #import "ViewController.h"
 
 @implementation AppDelegate
+@synthesize databaseName,databasePath;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
+//    } else {
+//        self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
+//    }
+//    
+//    
+//    self.window.rootViewController = self.viewController;
+//    [self.window makeKeyAndVisible];
+//    return YES;
+    [[LocationManager sharedInstance] locationWithDelegate:[LocationManager sharedInstance]];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone)
+    {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPhone" bundle:nil];
-    } else {
+    }
+    else
+    {
         self.viewController = [[ViewController alloc] initWithNibName:@"ViewController_iPad" bundle:nil];
     }
-    self.window.rootViewController = self.viewController;
+    UINavigationController *myNav = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    self.window.rootViewController = myNav;
     [self.window makeKeyAndVisible];
+    //DataBase
+    self.databaseName = @"ByCloudsFormsDB.sqlite";
+    
+    NSArray *documentPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDir = [documentPaths objectAtIndex:0];
+    self.databasePath = [documentDir stringByAppendingPathComponent:self.databaseName];
+    
+    [self createAndCheckDatabase];
+    
     return YES;
+}
+
+#pragma mark DB
+-(void) createAndCheckDatabase
+{
+    BOOL success;
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    success = [fileManager fileExistsAtPath:databasePath];
+    
+    if(success) return;
+    
+    NSString *databasePathFromApp = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:self.databaseName];
+    
+    [fileManager copyItemAtPath:databasePathFromApp toPath:databasePath error:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

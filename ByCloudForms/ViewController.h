@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DynamicVC.h"
+#import "Utilities.h"
+#import "MBProgressHUD.h"
+#import "sendRequests.h"
+#import "SignUpVC.h"
+#import "FormsTableVCViewController.h"
+#import "UserInfo.h"
 
-@interface ViewController : UIViewController
+#import "DatePickerVC.h"
+#import "ImagePickerVC.h"
 
+@interface ViewController : UIViewController <UITextFieldDelegate>
+{
+    UIBarButtonItem *btnSignUpNav,*btnSignInNav;
+    __weak IBOutlet UITextField *txtUsername;
+    __weak IBOutlet UITextField *txtPassword;
+    MBProgressHUD *myHud;
+}
+
+
+-(void)setTitleBarItems;
 @end

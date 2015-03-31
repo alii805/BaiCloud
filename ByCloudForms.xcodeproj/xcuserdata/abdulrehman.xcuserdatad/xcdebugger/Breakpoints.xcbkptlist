@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "1.0">
+   <FileBreakpoints>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ByCloudForms/ImagePickerView/ImagePickerVC.m"
+         timestampString = "410085818.549154"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "341"
+         endingLineNumber = "341"
+         landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ByCloudForms/ImagePickerView/ImagePickerVC.m"
+         timestampString = "410089782.356982"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "281"
+         endingLineNumber = "281"
+         landmarkName = "-useCameraRoll:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ByCloudForms/ImagePickerView/ImagePickerVC.m"
+         timestampString = "410089809.348897"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "267"
+         endingLineNumber = "267"
+         landmarkName = "-useCameraIphone:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "ByCloudForms/DynamicView/DynamicVC.m"
+         timestampString = "410713512.453171"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "3050"
+         endingLineNumber = "3050"
+         landmarkName = "-requestFinished:"
+         landmarkType = "5">
+      </FileBreakpoint>
+   </FileBreakpoints>
+</Bucket>
